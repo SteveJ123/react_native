@@ -38,22 +38,28 @@ export default class App extends React.Component {
     console.log(this.state.password);
  }
 
+updateTodo = (key) => {
+  const prev = this.state.todos;
+  const update = prev.filter(todo => todo.key != key);
+  this.setState({ todos: update });
+}
+
+addText = (text) =>{
+  console.log("text", text);
+}
+
   render() {
-    const updateTodo = (key) => {
-      const prev = this.state.todos;
-      const update = prev.filter(todo => todo.key != key);
-      this.setState({ todos: update });
-    }
+       
     return (
       <View style={styles.container}>
         <Header />
-        <Textfield />
+        <Textfield addText={this.addText} />
         <FlatList
           data={this.state.todos}
           renderItem={({ item }) => (
             <View>
               {console.log(item)}
-              <Item item={item} updateTodo={updateTodo} />
+              <Item item={item} updateTodo={this.updateTodo} />
             </View>
           )}
         />

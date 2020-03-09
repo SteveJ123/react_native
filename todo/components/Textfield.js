@@ -16,11 +16,13 @@ export default class Textfield extends React.Component {
 
 
     render() {
+        console.log("textinput", this.props );
         return (
-            <View style={styles.textField}>
+            <View style={styles.textField}>                
                 <TextInput
                     placeholder="Todos here"
                     placeholderTextColor="blue"
+                    onChangeText={(text)=>this.props.addText(text)}
                 />
             </View>
         );
