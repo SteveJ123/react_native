@@ -24,7 +24,7 @@ export default class Textfield extends React.Component {
                     placeholderTextColor="blue"
                     onChangeText={(text)=>this.props.updateValue(text)}
                     style={styles.textField}
-                />
+                />                
                 <Button title={"click"} onPress={()=>this.props.addText()} />
             </View>
         );
