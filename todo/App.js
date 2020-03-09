@@ -73,43 +73,6 @@ updateValue = (text) =>{
           )}
         />
 
-<ScrollView style={styles.content}>
-      <View style={styles.content}>
-
-        <Text >
-          Create Account
-        </Text>
-
-        <Text >
-          Name
-        </Text>
-
-        <TextInput
-          
-          placeholder="Enter Name"
-          returnKeyLabel = {"next"}
-          onChangeText={(text) => this.setState({username:text})}
-        />
-
-        <Text >
-          Name
-        </Text>
-
-        <TextInput          
-          placeholder="Enter Name"
-          returnKeyLabel = {"next"}
-          onChangeText={(text) => this.setState({password:text})}
-        />
-
-        <Button 
-          onPress={() => this._handlePress()}
-          title="Submit"
-          >
-           
-        </Button>
-
-        </View>
-      </ScrollView>
       </View>
     );
   }

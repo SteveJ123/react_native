@@ -18,11 +18,12 @@ export default class Textfield extends React.Component {
     render() {
         console.log("textinput", this.props );
         return (
-            <View style={styles.textField}>                
+            <View >                
                 <TextInput
                     placeholder="Todos here"
                     placeholderTextColor="blue"
                     onChangeText={(text)=>this.props.updateValue(text)}
+                    style={styles.textField}
                 />
                 <Button title={"click"} onPress={()=>this.props.addText()} />
             </View>
@@ -31,15 +32,17 @@ export default class Textfield extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    textField: {
-        width: 140,
+    textField: {        
+        width: 240,
         height: 40,
         textAlign: 'center',
-        paddingLeft: 40,
-        borderStyle: 'dashed',
+        paddingLeft: 15,
+        borderStyle: 'solid',
         borderRadius: 1,
         borderWidth: 1,
         borderColor: 'red',
-        borderTopColor: 'white'        
+        borderTopColor: 'red',
+        marginTop: 10,
+        marginBottom: 20,        
     }
 });
