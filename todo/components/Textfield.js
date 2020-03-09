@@ -18,7 +18,7 @@ export default class Textfield extends React.Component {
     render() {
         console.log("textinput", this.props );
         return (
-            <View>                
+            <View style={styles.textFieldContainer}>                
                 <TextInput
                     placeholder="Todos here"
                     placeholderTextColor="blue"
@@ -44,5 +44,8 @@ const styles = StyleSheet.create({
         borderTopColor: 'red',
         marginTop: 10,
         marginBottom: 20,        
+    },
+    textFieldContainer:{
+        marginBottom: 10,
     }
 });

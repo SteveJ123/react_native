@@ -35,15 +35,25 @@ const styles = StyleSheet.create({
     },
     itemList: {        
         width: 240,
-        marginTop: 10,        
+        // marginTop: 10,        
         padding: 10,
         backgroundColor: 'yellow',
         textAlign: 'center',
+        borderStyle: 'solid',
+        borderRadius: 1,
+        borderWidth: 1,
+        borderColor: 'black',
+        // borderBottomColor: 'black',
+        // borderTopColor: 'yellow',
     },
     closeList: {
-        marginTop: 10,
+        // marginTop: 10,
         padding: 10,                
-        backgroundColor: 'yellow',        
+        backgroundColor: 'yellow',
+        borderStyle: 'solid',
+        borderRadius: 1,
+        borderWidth: 1,
+        borderColor: 'black',        
     }
     
 });

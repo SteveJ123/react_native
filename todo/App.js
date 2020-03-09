@@ -37,28 +37,28 @@ export default class App extends React.Component {
   _handlePress() {
     console.log(this.state.username);
     console.log(this.state.password);
- }
+  }
 
-updateTodo = (key) => {
-  const prev = this.state.todos;
-  const update = prev.filter(todo => todo.key != key);
-  this.setState({ todos: update });
-}
+  updateTodo = (key) => {
+    const prev = this.state.todos;
+    const update = prev.filter(todo => todo.key != key);
+    this.setState({ todos: update });
+  }
 
-addText = () =>{
-  console.log("texting", typeof this.state.todos);
-  const additem = this.state.todos;
-  console.log("typeof", typeof additem);
-  additem.push({text: this.state.value, key: '6'})
-  this.setState({todos: additem})
-}
+  addText = () => {
+    console.log("texting", typeof this.state.todos);
+    const additem = this.state.todos;
+    console.log("typeof", typeof additem);
+    additem.push({ text: this.state.value, key: '6' })
+    this.setState({ todos: additem })
+  }
 
-updateValue = (text) =>{
-  this.setState({value: text});
-}
+  updateValue = (text) => {
+    this.setState({ value: text });
+  }
 
   render() {
-       
+
     return (
       <View style={styles.container}>
         <Header />
@@ -67,8 +67,10 @@ updateValue = (text) =>{
           data={this.state.todos}
           renderItem={({ item }) => (
             <View>
-              {console.log(item)}
-              <Item item={item} updateTodo={this.updateTodo} />
+              {/* {console.log(item)} */}
+              <View style={styles.listContainer}>
+                <Item item={item} updateTodo={this.updateTodo} />
+              </View>
             </View>
           )}
         />
@@ -84,5 +86,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ecf0f1',
+  },
+  listContainer: {
+    // backgroundColor: '#72bcd4',
+    // width: 540,    
+    // padding: 10,
   }
 });  
