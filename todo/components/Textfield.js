@@ -22,8 +22,9 @@ export default class Textfield extends React.Component {
                 <TextInput
                     placeholder="Todos here"
                     placeholderTextColor="blue"
-                    onChangeText={(text)=>this.props.addText(text)}
+                    onChangeText={(text)=>this.props.updateValue(text)}
                 />
+                <Button title={"click"} onPress={()=>this.props.addText()} />
             </View>
         );
     }

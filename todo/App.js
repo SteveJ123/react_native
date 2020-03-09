@@ -23,6 +23,7 @@ export default class App extends React.Component {
   // }
 
   state = {
+    value: '',
     todos: [
       { text: 'buy coffe', key: '1' },
       { text: 'buy mug', key: '2' },
@@ -44,8 +45,16 @@ updateTodo = (key) => {
   this.setState({ todos: update });
 }
 
-addText = (text) =>{
-  console.log("text", text);
+addText = () =>{
+  console.log("texting", typeof this.state.todos);
+  const additem = this.state.todos;
+  console.log("typeof", typeof additem);
+  additem.push({text: this.state.value, key: '6'})
+  this.setState({todos: additem})
+}
+
+updateValue = (text) =>{
+  this.setState({value: text});
 }
 
   render() {
@@ -53,7 +62,7 @@ addText = (text) =>{
     return (
       <View style={styles.container}>
         <Header />
-        <Textfield addText={this.addText} />
+        <Textfield updateValue={this.updateValue} addText={this.addText} />
         <FlatList
           data={this.state.todos}
           renderItem={({ item }) => (
