@@ -26,7 +26,7 @@ export default class Item extends React.Component {
 
 const styles = StyleSheet.create({
     itemList: {
-        marginTop: 40,
+        marginTop: 10,
         padding: 10,
         backgroundColor: 'yellow',
     },
