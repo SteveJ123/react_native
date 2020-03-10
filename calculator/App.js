@@ -126,13 +126,30 @@ export default class App extends React.Component{
           <Text style={styles.btn}>0</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-          <Text style={styles.btn}></Text>
+          <Text style={styles.btn}>.</Text>
           </TouchableOpacity>
             
           </View>
 
         </View>
-        <View style={styles.operations}><Text>operations</Text></View>
+        <View style={styles.operations}>        
+          <TouchableOpacity>
+          <Text style={styles.opbtn}>%</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.opbtn}>X</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.opbtn}>-</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.opbtn}>+</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.opbtn}>=</Text>
+          </TouchableOpacity>
+        
+        </View>
         </View>
       </View>
 
@@ -176,7 +193,19 @@ const styles = StyleSheet.create({
   operations:{
     flex: 1,    
     backgroundColor: 'black',
-  }
+    flexDirection: 'column',
+    color: 'white',
+  },
+  opbtn:{
+    color: 'white',
+    width: 40,
+    height: 50,
+    marginLeft: 30,
+    marginTop: 10,
+    marginBottom: 10,
+    fontSize: 40,
+    fontWeight: '400',
+      }
 });
 
 // export default App;
