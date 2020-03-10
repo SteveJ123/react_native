@@ -78,6 +78,16 @@ export default class App extends React.Component{
 
 
   render(){
+
+    let operators = ['%', 'X', '-', '+', '='];
+    let ops =[];
+
+    for(let i=0; i<5; i++){
+      ops.push(<TouchableOpacity>
+        <Text style={styles.opbtn}>{operators[i]}</Text>
+              </TouchableOpacity>)
+    }
+    console.log('ops', ops);
     return(
       <View style={styles.container}>
         <View style={styles.result}><Text>result</Text></View>
@@ -132,24 +142,7 @@ export default class App extends React.Component{
           </View>
 
         </View>
-        <View style={styles.operations}>        
-          <TouchableOpacity>
-          <Text style={styles.opbtn}>%</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.opbtn}>X</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.opbtn}>-</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.opbtn}>+</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.opbtn}>=</Text>
-          </TouchableOpacity>
-        
-        </View>
+        <View style={styles.operations}>{ops}</View>
         </View>
       </View>
 
