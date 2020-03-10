@@ -14,7 +14,8 @@ import {
   View,
   Text,
   StatusBar,
-  Button
+  Button,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -84,24 +85,49 @@ export default class App extends React.Component{
         <View style={styles.buttons}>
         <View style={styles.numbers}>
           <View style={styles.numberrow}>
-            <Text style={styles.btn}>7</Text>
-            <Text style={styles.btn}>8</Text>
-            <Text style={styles.btn}>9</Text>
+          <TouchableOpacity>
+          <Text style={styles.btn}>7</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.btn}>8</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.btn}>9</Text>
+          </TouchableOpacity>           
+            
           </View>
           <View style={styles.numberrow}>
+          <TouchableOpacity>
           <Text style={styles.btn}>4</Text>
-            <Text style={styles.btn}>5</Text>
-            <Text style={styles.btn}>6</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.btn}>5</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.btn}>6</Text>
+          </TouchableOpacity>
           </View>
           <View style={styles.numberrow}>
+          <TouchableOpacity>
           <Text style={styles.btn}>1</Text>
-            <Text style={styles.btn}>2</Text>
-            <Text style={styles.btn}>3</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.btn}>2</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.btn}>3</Text>
+          </TouchableOpacity>
           </View>
           <View style={styles.numberrow}>           
+          <TouchableOpacity>
           <Text style={styles.btn}></Text>
-            <Text style={styles.btn}>0</Text>
-            <Text style={styles.btn}></Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.btn}>0</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+          <Text style={styles.btn}></Text>
+          </TouchableOpacity>
             
           </View>
 
@@ -124,9 +150,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',    
   },
   btn:{
+    width: 20,
+    height: 50,
+    margin: 20,
     fontSize: 40,
-        fontWeight: '400',
-        color: "#000",
+    fontWeight: '400',
+    color: "#000",
   },  
   result:{
     flex: 2,
