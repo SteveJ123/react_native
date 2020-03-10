@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  Button
 } from 'react-native';
 
 import {
@@ -81,7 +82,30 @@ export default class App extends React.Component{
         <View style={styles.result}><Text>result</Text></View>
         <View style={styles.calculation}><Text>calcuation</Text></View>
         <View style={styles.buttons}>
-        <View style={styles.numbers}><Text>numbers</Text></View>
+        <View style={styles.numbers}>
+          <View style={styles.numberrow}>
+            <Text style={styles.btn}>7</Text>
+            <Text style={styles.btn}>8</Text>
+            <Text style={styles.btn}>9</Text>
+          </View>
+          <View style={styles.numberrow}>
+          <Text style={styles.btn}>4</Text>
+            <Text style={styles.btn}>5</Text>
+            <Text style={styles.btn}>6</Text>
+          </View>
+          <View style={styles.numberrow}>
+          <Text style={styles.btn}>1</Text>
+            <Text style={styles.btn}>2</Text>
+            <Text style={styles.btn}>3</Text>
+          </View>
+          <View style={styles.numberrow}>           
+          <Text style={styles.btn}></Text>
+            <Text style={styles.btn}>0</Text>
+            <Text style={styles.btn}></Text>
+            
+          </View>
+
+        </View>
         <View style={styles.operations}><Text>operations</Text></View>
         </View>
       </View>
@@ -95,6 +119,15 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: 'blue',
   },
+  numberrow:{    
+    flexDirection: 'row',
+    justifyContent: 'space-between',    
+  },
+  btn:{
+    fontSize: 40,
+        fontWeight: '400',
+        color: "#000",
+  },  
   result:{
     flex: 2,
     backgroundColor: 'red',
@@ -104,7 +137,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
   },
   buttons:{
-    flexGrow: 1,
+    flex: 7,
     flexDirection: 'row',
   },
   numbers:{
