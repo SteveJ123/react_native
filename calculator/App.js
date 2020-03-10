@@ -79,6 +79,22 @@ export default class App extends React.Component{
 
   render(){
 
+    let num=[];
+    let numbers=[[7, 8, 9], [4, 5, 6], [1, 2, 3], [, 0, '.']];
+
+    for(let i=0; i<4; i++){
+      let row=[];
+      for(let j=0; j<3; j++){
+        row.push(<TouchableOpacity>
+          <Text style={styles.btn}>{ numbers[i][j]}</Text>
+          </TouchableOpacity>)
+
+      }
+    num.push(<View style={styles.numberrow}>{row}</View>);
+    }
+
+    console.log('num', num);
+
     let operators = ['%', 'X', '-', '+', '='];
     let ops =[];
 
@@ -93,55 +109,8 @@ export default class App extends React.Component{
         <View style={styles.result}><Text>result</Text></View>
         <View style={styles.calculation}><Text>calcuation</Text></View>
         <View style={styles.buttons}>
-        <View style={styles.numbers}>
-          <View style={styles.numberrow}>
-          <TouchableOpacity>
-          <Text style={styles.btn}>7</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.btn}>8</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.btn}>9</Text>
-          </TouchableOpacity>           
-            
-          </View>
-          <View style={styles.numberrow}>
-          <TouchableOpacity>
-          <Text style={styles.btn}>4</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.btn}>5</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.btn}>6</Text>
-          </TouchableOpacity>
-          </View>
-          <View style={styles.numberrow}>
-          <TouchableOpacity>
-          <Text style={styles.btn}>1</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.btn}>2</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.btn}>3</Text>
-          </TouchableOpacity>
-          </View>
-          <View style={styles.numberrow}>           
-          <TouchableOpacity>
-          <Text style={styles.btn}></Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.btn}>0</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Text style={styles.btn}>.</Text>
-          </TouchableOpacity>
-            
-          </View>
-
-        </View>
+        <View style={styles.numbers}>{num}</View>
+        
         <View style={styles.operations}>{ops}</View>
         </View>
       </View>
