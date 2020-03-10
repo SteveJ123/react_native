@@ -66,7 +66,7 @@ export default class App extends React.Component {
         <FlatList
           data={this.state.todos}
           renderItem={({ item }) => (
-            <View>
+            <View >
               {/* {console.log(item)} */}
               <View style={styles.listContainer}>
                 <Item item={item} updateTodo={this.updateTodo} />
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
   },
   listContainer: {
+    flex: 1,
     // backgroundColor: '#72bcd4',
     // width: 540,    
     // padding: 10,

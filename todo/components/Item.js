@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     listContainer:{
         flex: 1, flexDirection: 'row'
     },
-    itemList: {        
+    itemList: {
+        // flex: 1,
         width: 240,
         // marginTop: 10,        
         padding: 10,
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
         // borderTopColor: 'yellow',
     },
     closeList: {
+        // flexGrow: 3,
         // marginTop: 10,
         padding: 10,                
         backgroundColor: 'yellow',
