@@ -76,9 +76,22 @@ import {
 
 export default class App extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.state={
+      operand: '',
+    }
+  }
 
   buttonPressed(text){
     console.log('text', text);
+
+    let value= this.state.operand + text;
+    this.setState({
+      operand: value,
+    })
+    console.log('texting', this.state.operand);
+
   }
 
   render(){
@@ -110,7 +123,7 @@ export default class App extends React.Component{
     console.log('ops', ops);
     return(
       <View style={styles.container}>
-        <View style={styles.result}><Text>result</Text></View>
+        <View style={styles.result}><Text>{this.state.operand}</Text></View>
         <View style={styles.calculation}><Text>calcuation</Text></View>
         <View style={styles.buttons}>
         <View style={styles.numbers}>{num}</View>        
