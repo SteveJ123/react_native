@@ -77,15 +77,19 @@ import {
 export default class App extends React.Component{
 
 
+  buttonPressed(text){
+    console.log('text', text);
+  }
+
   render(){
 
     let num=[];
-    let numbers=[[7, 8, 9], [4, 5, 6], [1, 2, 3], [, 0, '.']];
+    let numbers=[[7, 8, 9], [4, 5, 6], [1, 2, 3], ['.', 0, '=']];
 
     for(let i=0; i<4; i++){
       let row=[];
       for(let j=0; j<3; j++){
-        row.push(<TouchableOpacity>
+        row.push(<TouchableOpacity onPress={()=>this.buttonPressed(numbers[i][j])}>
           <Text style={styles.btn}>{ numbers[i][j]}</Text>
           </TouchableOpacity>)
 
@@ -95,10 +99,10 @@ export default class App extends React.Component{
 
     console.log('num', num);
 
-    let operators = ['%', 'X', '-', '+', '='];
+    let operators = ['/', 'X', '-', '+'];
     let ops =[];
 
-    for(let i=0; i<5; i++){
+    for(let i=0; i<4; i++){
       ops.push(<TouchableOpacity>
         <Text style={styles.opbtn}>{operators[i]}</Text>
               </TouchableOpacity>)
@@ -109,8 +113,7 @@ export default class App extends React.Component{
         <View style={styles.result}><Text>result</Text></View>
         <View style={styles.calculation}><Text>calcuation</Text></View>
         <View style={styles.buttons}>
-        <View style={styles.numbers}>{num}</View>
-        
+        <View style={styles.numbers}>{num}</View>        
         <View style={styles.operations}>{ops}</View>
         </View>
       </View>
@@ -162,9 +165,7 @@ const styles = StyleSheet.create({
     color: 'white',
     width: 40,
     height: 50,
-    marginLeft: 30,
-    marginTop: 10,
-    marginBottom: 10,
+    margin: 20,
     fontSize: 40,
     fontWeight: '400',
       }
