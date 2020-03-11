@@ -123,7 +123,7 @@ export default class App extends React.Component{
     console.log('ops', ops);
     return(
       <View style={styles.container}>
-        <View style={styles.result}><Text>{this.state.operand}</Text></View>
+        <View style={styles.result}><Text style={styles.resultvalue}>{this.state.operand}</Text></View>
         <View style={styles.calculation}><Text>calcuation</Text></View>
         <View style={styles.buttons}>
         <View style={styles.numbers}>{num}</View>        
@@ -154,7 +154,14 @@ const styles = StyleSheet.create({
   },  
   result:{
     flex: 2,
-    backgroundColor: 'red',
+    backgroundColor: 'red',    
+  },
+  resultvalue:{
+    padding: 20,
+    textAlign: 'right',
+    fontSize: 40,
+    fontWeight: '400',
+    color: "#000",
   },
   calculation:{
     flex: 1,
