@@ -90,7 +90,22 @@ export default class App extends React.Component{
     this.setState({
       operand: value,
     })
-    console.log('texting', this.state.operand);
+    console.log('texting', typeof this.state.operand);
+
+  }
+
+  operate(operation){
+    switch(operation){
+      case 'D':
+        let text = this.state.operand.split('');
+        text.pop();
+        let value = text.join('');
+        this.setState({
+          operand: value,
+        })
+
+    }
+
 
   }
 
@@ -112,11 +127,11 @@ export default class App extends React.Component{
 
     console.log('num', num);
 
-    let operators = ['/', 'X', '-', '+'];
+    let operators = ['D', '/', 'X', '-', '+'];
     let ops =[];
 
-    for(let i=0; i<4; i++){
-      ops.push(<TouchableOpacity>
+    for(let i=0; i<5; i++){
+      ops.push(<TouchableOpacity onPress={()=>this.operate(operators[i])}>
         <Text style={styles.opbtn}>{operators[i]}</Text>
               </TouchableOpacity>)
     }
@@ -185,7 +200,8 @@ const styles = StyleSheet.create({
     color: 'white',
     width: 40,
     height: 50,
-    margin: 20,
+    marginTop: 20,
+    marginLeft: 30,
     fontSize: 40,
     fontWeight: '400',
       }
