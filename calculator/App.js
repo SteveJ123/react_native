@@ -96,6 +96,15 @@ export default class App extends React.Component{
     })
   }
 
+  removeText(){
+    let text = this.state.operand.split('');
+    text.pop();
+    let value = text.join('');
+    this.setState({
+      operand: value,
+    })
+  }
+
   buttonPressed(text){
     console.log('text', text);
 
@@ -116,12 +125,7 @@ export default class App extends React.Component{
   operate(operation){
     switch(operation){
       case 'D':
-        let text = this.state.operand.split('');
-        text.pop();
-        let value = text.join('');
-        this.setState({
-          operand: value,
-        })
+        this.removeText();
         break;
         case '+':
           break;
