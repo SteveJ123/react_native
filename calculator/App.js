@@ -86,11 +86,34 @@ export default class App extends React.Component{
   buttonPressed(text){
     console.log('text', text);
 
-    let value= this.state.operand + text;
+    if(this.state.operand.includes('.')){
+      let value = this.state.operand.split('.');
+      console.log("value", value);
+      let lastValue = value[1];
+      console.log("lastValue", lastValue);
+      if(lastValue == ""){
+        this.setState({
+          operand: this.state.operand + text,
+        })  
+      }if(lastValue && text==='.'){
+        this.setState({
+          operand: this.state.operand,
+        })  
+      }else{
+        let value= this.state.operand + text;
+      this.setState({
+        operand: value,
+      })
+      console.log('texting', typeof this.state.operand);
+      } 
+      
+    }else{
+      let value= this.state.operand + text;
     this.setState({
       operand: value,
     })
     console.log('texting', typeof this.state.operand);
+    }  
 
   }
 
