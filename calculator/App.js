@@ -103,7 +103,15 @@ export default class App extends React.Component{
         this.setState({
           operand: value,
         })
-
+        break;
+        case '+':
+          break;
+        case '-':
+          break;
+        case '*':
+          break;
+        case '*':
+          break;
     }
 
 
