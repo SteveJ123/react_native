@@ -105,21 +105,28 @@ export default class App extends React.Component{
     })
   }
 
+  splitState(){
+    return this.state.operand.split('.');
+  }
+
   buttonPressed(text){
-    console.log('text', text);
+    if(!this.state.operand.includes('.')){
+      this.updateState(text);    
+    }    
 
     if(this.state.operand.includes('.')){
-      let value = this.state.operand.split('.');      
-      let lastValue = value[1];
-      console.log('lastValue', lastValue);
+      let value = this.splitState();
+      // let lastValue = value[1];
+      // console.log('lastValue', lastValue);
       if(value.length == 2 && text==='.'){
         this.sameState();
       }else{
         this.updateState(text);
-      }      
-    }else{
-      this.updateState(text);    
-    } 
+      }
+    }      
+    // }else{
+    //   this.updateState(text);    
+    // } 
   }
 
   operate(operation){
